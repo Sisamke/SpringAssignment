@@ -1,49 +1,56 @@
 package com.example.springassignment.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotBlank;
+import jakarta.persistence.*;
 
 @Entity
 public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long course_id;
 
-    @NotBlank(message = "Course name is required")
-    private String name;
+    private String courseName;
+    private String courseDescription;
+    private String category; // Foundation, Undergraduate, Postgraduate
 
-    @NotBlank(message = "Description is required")
-    private String description;
+    public Course() {}
 
-    public Course() {
+    public Course(Long course_id, String courseName, String courseDescription, String category) {
+        this.course_id = course_id;
+        this.courseName = courseName;
+        this.courseDescription = courseDescription;
+        this.category = category;
     }
 
-    public Course(String name, String description) {
-        this.name = name;
-        this.description = description;
+    public Long getCourse_id() {
+        return course_id;
     }
 
-    public Long getId() {
-        return id;
+    public void setCourse_id(Long course_id) {
+        this.course_id = course_id;
     }
 
-    public String getName() {
-        return name;
+    public String getCourseName() {
+        return courseName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
-    public String getDescription() {
-        return description;
+    public String getCourseDescription() {
+        return courseDescription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setCourseDescription(String courseDescription) {
+        this.courseDescription = courseDescription;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }
