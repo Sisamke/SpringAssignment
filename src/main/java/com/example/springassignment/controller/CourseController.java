@@ -16,31 +16,26 @@ public class CourseController {
         this.service = service;
     }
 
-    // GET ALL
     @GetMapping
     public List<Course> getAllCourses() {
         return service.getAllCourses();
     }
 
-    // GET BY CATEGORY
-    @GetMapping("/category/{type}")
-    public List<Course> getByCategory(@PathVariable String type) {
-        return service.getCoursesByCategory(type);
-    }
-
-    // CREATE
     @PostMapping
     public Course createCourse(@RequestBody Course course) {
         return service.createCourse(course);
     }
 
-    // DELETE
+    @GetMapping("/category/{category}")
+    public List<Course> getByCategory(@PathVariable String category) {
+        return service.getCoursesByCategory(category);
+    }
+
     @DeleteMapping("/{id}")
     public String deleteCourse(@PathVariable Long id) {
         return service.deleteCourse(id);
     }
 
-    // UPDATE
     @PutMapping("/{id}")
     public Course updateCourse(@PathVariable Long id, @RequestBody Course course) {
         return service.updateCourse(id, course);

@@ -7,27 +7,27 @@ public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long course_id;
+    private Long id;
 
     private String courseName;
     private String courseDescription;
-    private String category; // Foundation, Undergraduate, Postgraduate
+    private String category;
 
     public Course() {}
 
-    public Course(Long course_id, String courseName, String courseDescription, String category) {
-        this.course_id = course_id;
+    public Course(Long id, String courseName, String courseDescription, String category) {
+        this.id = id;
         this.courseName = courseName;
         this.courseDescription = courseDescription;
         this.category = category;
     }
 
-    public Long getCourse_id() {
-        return course_id;
+    public Long getId() {
+        return id;
     }
 
-    public void setCourse_id(Long course_id) {
-        this.course_id = course_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getCourseName() {
