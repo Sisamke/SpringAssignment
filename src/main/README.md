@@ -79,7 +79,7 @@ Delete a course
 This layer ensures that logic is separated from the controller.
 
 🔹 3.4 Controller Layer
-
+: 
 The controller exposes REST endpoints to interact with the system.
 
 Implemented Endpoints:
